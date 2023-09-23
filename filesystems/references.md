@@ -1,4 +1,4 @@
-https://pkg.go.dev/io#Reader
-https://pkg.go.dev/io#Writer
-https://wiki.archlinux.org/title/FUSE
-https://en.wikipedia.org/wiki/Ext2
+1. https://pkg.go.dev/io#Reader
+1. https://pkg.go.dev/io#Writer
+1. https://wiki.archlinux.org/title/FUSE
+1. https://en.wikipedia.org/wiki/Ext2

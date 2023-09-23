@@ -1,18 +1,18 @@
-https://codeforces.com/blog/entry/60598?locale=ru
-https://godbolt.org/
-https://ecse324.ece.mcgill.ca/_static/8086-die-blog-post/www.righto.com/2020/06/a-look-at-die-of-8086-processor.html
-https://en.wikipedia.org/wiki/Intel_8086
-https://en.wikipedia.org/wiki/I386
-https://en.wikipedia.org/wiki/X86-64
-https://en.wikipedia.org/wiki/X86#/media/File:Table_of_x86_Registers_svg.svg
-https://en.wikipedia.org/wiki/Virtual_address_space#/media/File:Virtual_address_space_and_physical_address_space_relationship.svg
-https://manybutfinite.com/post/journey-to-the-stack/
-https://github.com/victor-yacovlev/fpmi-caos/tree/master/practice/x86-64
-https://www.felixcloutier.com/x86/
-https://en.wikipedia.org/wiki/Floating-point_unit
-https://en.wikipedia.org/wiki/Instruction_pipelining
-https://en.wikipedia.org/wiki/Branch_predictor
-https://en.wikipedia.org/wiki/Memory_bandwidth
-https://github.com/simdjson/simdjson
-https://en.wikipedia.org/wiki/Single_instruction,_multiple_data
-https://en.wikipedia.org/wiki/Protection_ring
+1. https://codeforces.com/blog/entry/60598?locale=ru
+1. https://godbolt.org/
+1. https://ecse324.ece.mcgill.ca/_static/8086-die-blog-post/www.righto.com/2020/06/a-look-at-die-of-8086-processor.html
+1. https://en.wikipedia.org/wiki/Intel_8086
+1. https://en.wikipedia.org/wiki/I386
+1. https://en.wikipedia.org/wiki/X86-64
+1. https://en.wikipedia.org/wiki/X86#/media/File:Table_of_x86_Registers_svg.svg
+1. https://en.wikipedia.org/wiki/Virtual_address_space#/media/File:Virtual_address_space_and_physical_address_space_relationship.svg
+1. https://manybutfinite.com/post/journey-to-the-stack/
+1. https://github.com/victor-yacovlev/fpmi-caos/tree/master/practice/x86-64
+1. https://www.felixcloutier.com/x86/
+1. https://en.wikipedia.org/wiki/Floating-point_unit
+1. https://en.wikipedia.org/wiki/Instruction_pipelining
+1. https://en.wikipedia.org/wiki/Branch_predictor
+1. https://en.wikipedia.org/wiki/Memory_bandwidth
+1. https://github.com/simdjson/simdjson
+1. https://en.wikipedia.org/wiki/Single_instruction,_multiple_data
+1. https://en.wikipedia.org/wiki/Protection_ring
