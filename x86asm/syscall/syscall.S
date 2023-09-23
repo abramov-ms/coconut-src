@@ -1,7 +1,7 @@
 .intel_syntax noprefix
 
 .text
-.global syscall
+.global my_syscall
 
 // System V x64 ABI: rdi, rsi, rdx, rcx, r8, r9.
 // x64 Linux syscall ABI: rdi, rsi, rdx, r10, r8, r9.
