@@ -22,8 +22,6 @@ ssize_t write_all(int fd, char buf[], size_t count) {
     ssize_t bytes = write(fd, buf, count - done);
     if (bytes < 0) {
       return bytes;
-    } else if (bytes == 0) {
-      break;
     }
 
     done += bytes;
