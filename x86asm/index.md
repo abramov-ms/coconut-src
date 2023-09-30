@@ -7,6 +7,7 @@
 1. Calling conventions, callee-saved регистры. Виртуальное адресное
    пространство. Memory layout при вызове функции. Выравнивание стека.
 1. Примеры: `rfib`, `mfib`, `sse_sqrt`.
-1. SIMD. Примеры: vadd. Как дебажить ассемблерный код.
+1. SSE vs. FPU
+1. SIMD. Примеры: vadd. Как дебажить ассемблерный код. Intel intrinsics.
 1. Сисколлы, переключение контекста, кольца защиты.
 1. simdjson, конвейер, branch prediction.

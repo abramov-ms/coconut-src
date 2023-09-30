@@ -16,3 +16,6 @@
 1. https://github.com/simdjson/simdjson
 1. https://en.wikipedia.org/wiki/Single_instruction,_multiple_data
 1. https://en.wikipedia.org/wiki/Protection_ring
+1. https://gitlab.com/Lipovsky/sure/-/blob/master/sure/machine/x86_64/context.S?ref_type=heads
+1. https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html
+1. https://habr.com/ru/articles/540136/
