@@ -20,7 +20,7 @@ rfib:
   ldr x1, [sp]
   str x0, [sp]
   sub x0, x1, 1
-  bl rfib
+  b rfib
 
   ldr x1, [sp]
   add sp, sp, 16
