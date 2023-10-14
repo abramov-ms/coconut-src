@@ -10,7 +10,11 @@ rfib:
   mov eax, 1
   ret
 
+// exp(int* base, float* exp)
+
 .Lrecurse:
+// f<int>()
+// f<std::conditional_t<std::is_same_v<float, double>, int, void*>>()
   dec edi
   push rdi
   call rfib

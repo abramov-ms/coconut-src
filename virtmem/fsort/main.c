@@ -33,5 +33,6 @@ int main(int argc, const char* argv[]) {
   qsort(ascii, stbuf.st_size, sizeof(char), &cmp_ascii);
 
   munmap(ascii, stbuf.st_size);
+  close(fd);
   return 0;
 }
