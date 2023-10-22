@@ -3,7 +3,7 @@
 ssize_t read_all(int fd, char buf[], size_t count) {
   size_t done = 0;
   while (done < count) {
-    ssize_t bytes = read(fd, buf, count - done);
+    ssize_t bytes = read(fd, buf + done, count - done);
     if (bytes < 0) {
       return bytes;
     } else if (bytes == 0) {
@@ -19,7 +19,7 @@ ssize_t read_all(int fd, char buf[], size_t count) {
 ssize_t write_all(int fd, char buf[], size_t count) {
   size_t done = 0;
   while (done < count) {
-    ssize_t bytes = write(fd, buf, count - done);
+    ssize_t bytes = write(fd, buf + done, count - done);
     if (bytes < 0) {
       return bytes;
     }
