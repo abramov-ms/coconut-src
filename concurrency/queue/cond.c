@@ -79,6 +79,8 @@ void queue_push(mpmc_queue_t* queue, char* message) {
 char* queue_pop(mpmc_queue_t* queue) {
   pthread_mutex_lock(&queue->mutex);
   while (queue->size == 0 && !queue->closed) {
+    // 1. unlock
+    // 2. sleep
     pthread_cond_wait(&queue->has_message, &queue->mutex);
   }
 
