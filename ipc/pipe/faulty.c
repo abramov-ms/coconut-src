@@ -20,7 +20,6 @@ int main(int argc, const char* argv[]) {
     dup2(pipe_fds[1], STDOUT_FILENO);
     execlp(exe1, exe1);
   }
-  wait(NULL);
 
   if (fork() == 0) {
     close(pipe_fds[1]);
@@ -29,6 +28,8 @@ int main(int argc, const char* argv[]) {
   }
   close(pipe_fds[0]);
   close(pipe_fds[1]);
+
+  wait(NULL);
   wait(NULL);
 
   return 0;
