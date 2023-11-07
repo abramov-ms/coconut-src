@@ -11,5 +11,5 @@
 1. `curl`, `-v`, `-I`, `-L`, разные http-методы.
 1. `netcat`, подключение по `HTTP` вручную.
 1. TCP server + client.
-1. UDP server + client.
+1. UDP server + client, implicit bind, размеры пакетов.
 1. `epoll`
