@@ -1,6 +1,6 @@
-extern int counter;
+extern int aboba;
 
 int main() {
-  ++counter;
+  ++aboba;
   return 0;
 }

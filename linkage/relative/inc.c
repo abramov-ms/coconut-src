@@ -1,5 +1,5 @@
-extern int counter;
+extern int aboba;
 
 void inc() {
-  ++counter;
+  ++aboba;
 }

@@ -1,1 +1,1 @@
-int counter;
+int aboba;

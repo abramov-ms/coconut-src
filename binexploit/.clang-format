@@ -1,0 +1,15 @@
+BasedOnStyle: Google
+---
+Language: Cpp
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Empty
+AllowShortEnumsOnASingleLine: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+PackConstructorInitializers: Never
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: AfterComma
+FixNamespaceComments: true
+MaxEmptyLinesToKeep: 1
+SortIncludes: false
