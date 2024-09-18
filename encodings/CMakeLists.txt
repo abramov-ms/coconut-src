@@ -5,7 +5,8 @@ project(
   LANGUAGES C CXX
 )
 
-set(CMAKE_C_FLAGS "-Wall -Wextra -Werror -fsanitize=undefined,address")
+set(CMAKE_C_FLAGS "-Wall -Wextra -Werror -fsanitize=undefined,address -g")
 
 add_subdirectory(numeric)
 add_subdirectory(text)
+add_subdirectory(alignment)
