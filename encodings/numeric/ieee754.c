@@ -15,7 +15,14 @@ void format_binary(uint64_t x, int bits, char buf[]) {
 }
 
 void dump_double(double x) {
-  // ???
+  uint64_t repr;
+  memcpy(&repr, &x, sizeof(x));
+
+  uint64_t sign = repr >> 63;
+  uint64_t exponent = (uint64_t)(repr << 1) >> 52;
+  uint64_t mantissa = (uint64_t)(repr << 12) >> 12;
+
+  printf("sign = %lu, exp = %lu, mantissa = %lu\n", sign, exponent, mantissa);
 }
 
 int main() {
@@ -24,5 +31,4 @@ int main() {
   dump_double(1.23 / 0.0);
   dump_double(-1.23 / 0.0);
   dump_double(0.0 / 0.0);
-  dump_double(1e-312);
 }

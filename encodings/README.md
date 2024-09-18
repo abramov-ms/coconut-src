@@ -12,7 +12,7 @@
 1. [Data alignment: Straighten up and fly right](https://developer.ibm.com/articles/pa-dalign/)
 1. [Clang command line argument interface](https://clang.llvm.org/docs/ClangCommandLineReference.html)
 1. [C Isn't A Programming Language Anymore](https://faultlore.com/blah/c-isnt-a-language/#c-doesnt-actually-have-an-abi)
-1. ["compiler-rt runtime libraries"](https://compiler-rt.llvm.org/)
+1. ["compiler-rt" runtime libraries](https://compiler-rt.llvm.org/)
 1. [What is Strict Aliasing and why we Care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 
 ---
