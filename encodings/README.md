@@ -15,4 +15,6 @@
 1. ["compiler-rt runtime libraries"](https://compiler-rt.llvm.org/)
 1. [What is Strict Aliasing and why we Care?](https://gist.github.com/shafik/848ae25ee209f698763cffee272a58f8)
 
+---
+
 ![bool is only one bit](alignment/bool_is_1_bit.jpg)
