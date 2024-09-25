@@ -7,6 +7,5 @@ project(
 
 set(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
-add_subdirectory(strace)
 add_subdirectory(io)
 add_subdirectory(faulty)
