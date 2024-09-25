@@ -9,3 +9,4 @@ set(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
 add_subdirectory(io)
 add_subdirectory(faulty)
+add_subdirectory(fswatcher)
