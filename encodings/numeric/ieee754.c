@@ -19,7 +19,7 @@ void dump_double(double x) {
   memcpy(&repr, &x, sizeof(x));
 
   uint64_t sign = repr >> 63;
-  uint64_t exponent = (uint64_t)(repr << 1) >> 52;
+  uint64_t exponent = (uint64_t)(repr << 1) >> (52 + 1);
   uint64_t mantissa = (uint64_t)(repr << 12) >> 12;
 
   printf("sign = %lu, exp = %lu, mantissa = %lu\n", sign, exponent, mantissa);
