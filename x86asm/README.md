@@ -2,7 +2,7 @@
 
 1. Как посмотреть, в какой ассемблер компилируется Си. Objdump/godbolt.
 1. Регистры x86, Intel 8086. i386, amd64, наборы инструкций. `/proc/cpuinfo`.
-   `clang -print-architectures`.
+   `clang -print-targets`.
 1. Специальные регистры `rip`, `rsp`, `rbp`, `rflags`. Флаг компилятора
    `-fno-omit-frame-pointer`.
 1. Референс по инструкциям x86. CISC vs RISC.
@@ -37,3 +37,5 @@
 1. https://gitlab.com/Lipovsky/sure/-/blob/master/sure/machine/x86_64/context.S?ref_type=heads
 1. https://www.intel.com/content/www/us/en/docs/intrinsics-guide/index.html
 1. https://habr.com/ru/articles/540136/
+1. https://developers.redhat.com/articles/2023/07/31/frame-pointers-untangling-unwinding
+1. https://opensource.com/article/23/3/gdb-debugger-call-frame-active-function-calls
