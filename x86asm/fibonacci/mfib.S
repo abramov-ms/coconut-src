@@ -17,7 +17,6 @@ mfib:
 
   pop rdi
   mov dword ptr [rax], 1
-  // [base + index * scale + offset]
   mov dword ptr [rax + 1*4], 1
 
   mov ebx, 0
