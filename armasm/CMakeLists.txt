@@ -9,3 +9,4 @@ set(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
 add_subdirectory(status)
 add_subdirectory(fibonacci)
+add_subdirectory(echo)

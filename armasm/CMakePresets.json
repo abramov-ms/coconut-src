@@ -23,5 +23,11 @@
         "ninja"
       ]
     }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    }
   ]
 }

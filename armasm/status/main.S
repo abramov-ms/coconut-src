@@ -5,6 +5,4 @@
 // x0 - return
 main:
   mov x0, 61
-
-  ret
   br x30

@@ -25,18 +25,6 @@ mfib:
   lsl x0, x0, 2
   bl malloc
 
-  // call malloc
-  // push (rip + 4)
-  // jmp malloc
-  // ret ~= pop rip
-
-  // call
-  // ret
-
-  // add x30, pc, 4
-  // b malloc
-  // br x30
-
   pop x1
   mov w2, 1
   str w2, [x0]
@@ -64,4 +52,4 @@ mfib:
 
   pop x0
   pop x30
-  ret // br x30
+  ret
