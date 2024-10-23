@@ -36,7 +36,7 @@ int main() {
       break;
     }
 
-    char* argv[1024];
+    char* argv[1024];  // executable args
     parse_args(cmdbuf, argv);
 
     pid_t pid = fork();
@@ -44,7 +44,8 @@ int main() {
       err(EXIT_FAILURE, "fork failed");
     }
     if (pid == 0) {
-      execvp(argv[0], argv);
+      // ...
+      execv(argv[0], argv);
       err(EXIT_FAILURE, "exec failed");
     }
 

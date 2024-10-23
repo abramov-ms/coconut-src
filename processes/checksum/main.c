@@ -9,7 +9,7 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 
-#define verify(expr)                               \
+#define VERIFY(expr)                               \
   if (!(expr)) {                                   \
     err(EXIT_FAILURE, "assertion failed: " #expr); \
   }
@@ -31,11 +31,11 @@ void* sum(void* ptr) {
 
 uint8_t checksum(int fd, size_t n_jobs) {
   struct stat stbuf = {};
-  verify(fstat(fd, &stbuf) == 0);
+  VERIFY(fstat(fd, &stbuf) == 0);
   size_t size = stbuf.st_size;
 
   const uint8_t* bytes;
-  verify((bytes = (const uint8_t*)mmap(/*addr=*/NULL, size, PROT_READ,
+  VERIFY((bytes = (const uint8_t*)mmap(/*addr=*/NULL, size, PROT_READ,
                                        MAP_PRIVATE, fd,
                                        /*offset=*/0)) != NULL);
   size_t part_size = size / n_jobs;
@@ -58,7 +58,7 @@ uint8_t checksum(int fd, size_t n_jobs) {
   free(workers);
   free(args);
 
-  verify(munmap((void*)bytes, size) == 0);
+  VERIFY(munmap((void*)bytes, size) == 0);
   return sum;
 }
 
@@ -73,7 +73,7 @@ int main(int argc, const char* argv[]) {
     err(EXIT_FAILURE, "failed to open %s\n", argv[1]);
   }
 
-  const size_t n_jobs = 1;
+  const size_t n_jobs = 8;
   printf("%hhu\n", checksum(fd, n_jobs));
   return 0;
 }
