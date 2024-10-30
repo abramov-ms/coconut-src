@@ -5,7 +5,8 @@ project(
   LANGUAGES C CXX ASM
 )
 
-set(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
+set(CMAKE_C_FLAGS "-g -Wall -Wextra -Werror")
+set(CMAKE_CXX_FLAGS "-g -Wall -Wextra -Werror")
 
 if(ASAN)
   add_compile_options(-fsanitize=address -fno-sanitize-recover=all)
