@@ -115,9 +115,9 @@ const useconds_t sleep_useconds = 500000;
 void* producer(void* arg) {
   mpmc_queue_t* queue = (mpmc_queue_t*)arg;
 
-  for (size_t i = 0; i < n_messages; ++i) {
+  for (int i = 0; i < n_messages; ++i) {
     char* message = malloc(128);
-    sprintf(message, "ping #%lu", i);
+    sprintf(message, "ping #%d", i);
     queue_push(queue, message);
     usleep(sleep_useconds);
   }

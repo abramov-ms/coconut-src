@@ -6,17 +6,9 @@
 
 atomic_bool locked = false;
 
-// void lock() {
-//   while (atomic_exchange(&locked, true)) {
-//     // Backoff...
-//   }
-// }
-
 void lock() {
   while (atomic_exchange(&locked, true)) {
-    while (atomic_load(&locked)) {
-      // Backoff...
-    }
+    // Backoff...
   }
 }
 

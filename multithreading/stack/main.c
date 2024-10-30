@@ -40,7 +40,7 @@ const int n_pushes = 100500;
 
 void* producer(void* arg) {
   lf_mpsc_stack_t* stack = (lf_mpsc_stack_t*)arg;
-  for (size_t i = 0; i < n_pushes; ++i) {
+  for (int i = 0; i < n_pushes; ++i) {
     stack_push(stack, i);
   }
 
@@ -49,7 +49,7 @@ void* producer(void* arg) {
 
 void* consumer(void* arg) {
   lf_mpsc_stack_t* stack = (lf_mpsc_stack_t*)arg;
-  for (size_t i = 0; i < n_pushes; ++i) {
+  for (int i = 0; i < n_pushes; ++i) {
     stack_node_t* node;
     while ((node = stack_pop(stack)) == NULL) {
       // Retry...
