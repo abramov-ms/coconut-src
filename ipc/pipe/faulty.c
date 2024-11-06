@@ -18,13 +18,13 @@ int main(int argc, const char* argv[]) {
   if (fork() == 0) {
     close(pipe_fds[0]);
     dup2(pipe_fds[1], STDOUT_FILENO);
-    execlp(exe1, exe1);
+    execlp(exe1, exe1, NULL);
   }
 
   if (fork() == 0) {
     close(pipe_fds[1]);
     dup2(pipe_fds[0], STDIN_FILENO);
-    execlp(exe2, exe2);
+    execlp(exe2, exe2, NULL);
   }
   close(pipe_fds[0]);
   close(pipe_fds[1]);

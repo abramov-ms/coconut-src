@@ -40,7 +40,7 @@ int main(int argc, const char* argv[]) {
           // close(pipe_fds[0]);
           dup2(pipe_fds[1], STDOUT_FILENO);
         }
-        execlp(commands[i], commands[i]);
+        execlp(commands[i], commands[i], NULL);
         err(EXIT_FAILURE, "exec");
       default:
         if (i > 0) {

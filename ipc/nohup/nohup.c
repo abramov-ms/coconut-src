@@ -18,6 +18,6 @@ int main(int argc, const char* argv[]) {
   }
 
   const char* prog = argv[1];
-  execlp(prog, prog);
+  execlp(prog, prog, NULL);
   return EXIT_FAILURE;
 }
