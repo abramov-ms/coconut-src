@@ -15,6 +15,7 @@ if(TSAN)
   add_link_options(-fsanitize=thread)
 endif()
 
+add_subdirectory(redirect)
 add_subdirectory(cat)
 add_subdirectory(pipe)
 add_subdirectory(nohup)

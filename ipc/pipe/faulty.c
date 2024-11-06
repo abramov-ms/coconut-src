@@ -9,6 +9,7 @@ int main(int argc, const char* argv[]) {
   if (argc != 3) {
     return 1;
   }
+
   const char* exe1 = argv[1];
   const char* exe2 = argv[2];
 
@@ -21,15 +22,17 @@ int main(int argc, const char* argv[]) {
     execlp(exe1, exe1, NULL);
   }
 
+  wait(NULL);
+
   if (fork() == 0) {
     close(pipe_fds[1]);
     dup2(pipe_fds[0], STDIN_FILENO);
     execlp(exe2, exe2, NULL);
   }
+
   close(pipe_fds[0]);
   close(pipe_fds[1]);
 
-  wait(NULL);
   wait(NULL);
 
   return 0;
