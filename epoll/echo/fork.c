@@ -76,6 +76,7 @@ void* echo(void* arg) {
       goto out;
     }
   }
+
   if (bytes == -1) {
     log_error(sock);
     goto out;
