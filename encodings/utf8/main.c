@@ -11,5 +11,7 @@ int main() {
   utf8_print(0x1F643);
   utf8_print(0x1F37E);
   utf8_print(0x0B9C);
+
+  printf("%lu\n", utf8_strlen("привет"));
   return 0;
 }

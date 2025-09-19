@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef struct {
   char str[4];
@@ -61,4 +62,32 @@ glyph_t utf8_encode(codepoint_t cp) {
   }
 
   return glyph;
+}
+
+static size_t starter_len(unsigned char first) {
+  if ((first >> 3) == 0b11110) {
+    return 4;
+  } else if ((first >> 4) == 0b1110) {
+    return 3;
+  } else if ((first >> 5) == 0b110) {
+    return 2;
+  } else if (first < 128) {
+    return 1;
+  } else {
+    abort();
+  }
+}
+
+size_t utf8_strlen(const char* str) {
+  const char* ch = str;
+
+  size_t length = 0;
+
+  while (*ch != '\0') {
+    size_t bytes = starter_len(*ch);
+    length += 1;
+    ch += bytes;
+  }
+
+  return length;
 }
