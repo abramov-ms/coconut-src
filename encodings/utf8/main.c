@@ -8,10 +8,7 @@ void utf8_print(codepoint_t cp) {
 }
 
 int main() {
-  utf8_print(0x1F643);
-  utf8_print(0x1F37E);
-  utf8_print(0x0B9C);
-
-  printf("%lu\n", utf8_strlen("привет"));
+  utf8_print(0x1F604);
+  utf8_print(0x069C);
   return 0;
 }

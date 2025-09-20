@@ -8,4 +8,3 @@ typedef struct {
 typedef uint32_t codepoint_t;
 
 glyph_t utf8_encode(codepoint_t);
-size_t utf8_strlen(const char*);

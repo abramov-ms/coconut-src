@@ -1,15 +1,15 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 
 int main() {
-  uint8_t bytes[4] = {15, 28};
+  char bytes[4] = {42, 51};
 
-  // 28 * 256 + 15 = 7183
-  int x;
-  memcpy(&x, bytes, sizeof(x));
+  uint32_t n;
+  memcpy(&n, bytes, sizeof(n));
 
-  printf("%d\n", x);
+  printf("%u\n", n);
+  printf("%d\n", 42 + 51 * 256);
 
   return 0;
 }
