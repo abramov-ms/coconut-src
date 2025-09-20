@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 typedef struct {
-  char str[4];
+  char str[5];
 } glyph_t;
 
 typedef uint32_t codepoint_t;
