@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.30)
+
+project(trollfs C)
+
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FUSE REQUIRED fuse3)
 

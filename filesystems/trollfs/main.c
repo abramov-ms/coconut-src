@@ -7,7 +7,7 @@
 void* trollfs_init(struct fuse_conn_info* conn, struct fuse_config* cfg) {
   (void)conn;
 
-  // Use ours custom st_ino-s.
+  // Use our custom st_ino-s.
   cfg->use_ino = 1;
 
   return NULL;
