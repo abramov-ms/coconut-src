@@ -1,22 +1,25 @@
 .intel_syntax noprefix
 
-.section .text
-
 .global caesar_encrypt
+
+.section .text
 
 // rdi: char* str
 // rsi: size_t len
-// rdx: int shift
+// edx: int shift
 caesar_encrypt:
-  mov rcx, 0
+  xor rcx, rcx
 
-  .loop:
-    mov r8b, byte ptr [rdi+rcx*1]
+  loop:
+    xor r8b, r8b
+
+    // [base + scale*index + offset]
+    mov r8b, [rcx + rdi]
     add r8d, edx
-    mov byte ptr [rdi+rcx*1], r8b
-    add rcx, 1
+    mov [rcx + rdi], r8b
+    
+    inc rcx
     cmp rcx, rsi
-    jl .loop
+    jl loop
 
   ret
-

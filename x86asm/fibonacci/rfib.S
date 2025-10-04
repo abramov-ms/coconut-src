@@ -1,25 +1,30 @@
-  .intel_syntax noprefix
+.intel_syntax noprefix
 
-  .global rfib
-  .text
+.global rfib
 
+.section .text
+
+// rdi: int n
 rfib:
-  cmp edi, 2
-  jge .Lrecurse
+  cmp rdi, 2
+  jl out
 
-  mov eax, 1
-  ret
+  dec rdi
 
-.Lrecurse:
-  dec edi
-  push rdi
   call rfib
-
-  pop rdi
-  dec edi
   push rax
-  call rfib
-  pop rcx
 
-  add eax, ecx
+  dec rdi
+  call rfib
+
+  pop r8
+  add rax, r8
+
+  inc rdi
+  inc rdi
+
   ret
+
+  out:
+    mov rax, 1
+    ret

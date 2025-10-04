@@ -1,13 +1,16 @@
 .intel_syntax noprefix
 
+.global aplusb
+
 .section .text
 
-.globl aplusb
+#define amogus rax
 
-// edi = a
-// esi = b
-// eax = result
+// rdi: int a
+// rsi: int b
+// rax: return value
 aplusb:
-  mov rax, rdi
-  add eax, esi
+  mov amogus, rdi // rax <- rdi
+  add amogus, rsi // rax += rsi
   ret
+  

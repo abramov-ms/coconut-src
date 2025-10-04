@@ -2,18 +2,19 @@
 
 .section .rodata
 
-format1: .asciz "%d\n"
-format2: .asciz "%lu\n"
-
-.section .text
+format: .asciz "%d\n"
 
 .global my_printf
 
+.section .text
+
 // rdi: int n
 my_printf:
-  mov rsi, offset format1
-  lea rdi, [rip + offset format2]
+  mov rsi, rdi
+  mov rdi, offset format
+
   sub rsp, 8
   call printf
   add rsp, 8
+
   ret
