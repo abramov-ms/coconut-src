@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+---
+Language: C
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+SortIncludes: false
+IndentWidth: 4
+ColumnLimit: 80
