@@ -4,7 +4,7 @@
 
 class Matrix {
  public:
-  Matrix(size_t height, std::vector<int32_t> cells)
+  Matrix(size_t height, std::vector<int> cells)
       : height_(height),
         cells_(std::move(cells)) {
     assert(cells_.size() % height_ == 0);
@@ -18,8 +18,8 @@ class Matrix {
     return cells_.size() / height_;
   }
 
-  int32_t At(size_t i, size_t j) const {
-    // assert(i * height_ + j < cells_.size());
+  int At(size_t i, size_t j) const {
+    assert(i * height_ + j < cells_.size());
     return cells_[i * height_ + j];
   }
 
@@ -30,13 +30,15 @@ class Matrix {
     size_t m = lhs.Width();
     size_t k = rhs_t.Height();
 
-    std::vector<int32_t> cells;
+    std::vector<int> cells;
     cells.reserve(n * k);
     for (size_t i = 0; i < n; ++i) {
       for (size_t j = 0; j < k; ++j) {
-        int32_t cell = 0;
+        int cell = 0;
         for (size_t s = 0; s < m; ++s) {
-          cell += lhs.At(i, s) * rhs_t.At(j, s);
+          int l = lhs.At(i, s);
+          int r = rhs_t.At(j, s);
+          cell += l * r;
         }
         cells.push_back(cell);
       }
@@ -47,13 +49,13 @@ class Matrix {
 
  private:
   size_t height_;
-  std::vector<int32_t> cells_;
+  std::vector<int> cells_;
 };
 
 int main() {
   constexpr size_t kHeight = 600;
   constexpr size_t kWidth = 600;
-  std::vector<int32_t> cells(kHeight * kWidth, 0);
+  std::vector<int> cells(kHeight * kWidth, 0);
   Matrix lhs{kHeight, cells};
   Matrix rhs{kHeight, cells};
 

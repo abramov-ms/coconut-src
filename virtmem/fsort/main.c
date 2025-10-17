@@ -1,39 +1,46 @@
 #include <err.h>
 #include <assert.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 
 int cmp_ascii(const void* lhs, const void* rhs) {
-  return *(const char*)lhs - *(const char*)rhs;
+  return *(char*)lhs - *(char*)rhs;
 }
 
 int main(int argc, const char* argv[]) {
-  if (argc != 2) {
-    printf("usage: %s FILE", argv[0]);
-    return EXIT_FAILURE;
-  }
+  // argv[1]: filename
 
   int fd = open(argv[1], O_RDWR);
   if (fd == -1) {
-    err(EXIT_FAILURE, "couldn't open file %s", argv[1]);
+    err(EXIT_FAILURE, "open");
   }
 
-  struct stat stbuf = {};
-  if (fstat(fd, &stbuf) != 0) {
-    err(EXIT_FAILURE, "couldn't stat file %s", argv[1]);
+  struct stat stbuf;
+  if (fstat(fd, &stbuf) == -1) {
+    err(EXIT_FAILURE, "stat");
   }
 
-  char* ascii =
-      mmap(NULL, stbuf.st_size, PROT_READ, MAP_PRIVATE, fd, /*offset=*/0);
+  void* ptr =
+      mmap(NULL, stbuf.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+  if (ptr == MAP_FAILED) {
+    err(EXIT_FAILURE, "mmap");
+  }
 
-  qsort(ascii, stbuf.st_size, sizeof(char), &cmp_ascii);
-  munmap(ascii, stbuf.st_size);
+  qsort(ptr, stbuf.st_size, 1, &cmp_ascii);
 
+  ((char*)ptr)[stbuf.st_size] = '\0';
+  printf("in-memory copy: %s\n", (char*)ptr);
+
+  printf("stdin addr: %p\n", &stdin);
+
+  pause();
+
+  munmap(ptr, stbuf.st_size);
   close(fd);
 
   return 0;

@@ -3,15 +3,12 @@
 #include <malloc.h>
 
 int main() {
-  const char hello[] = "hi mom";
-  write(STDOUT_FILENO, hello, sizeof(hello));
-
   const size_t size = 1024 * 1024;
   void* ptr = malloc(size);
+  printf("ptr = %p\n", ptr);
 
   pause();
 
   free(ptr);
-
   return 0;
 }

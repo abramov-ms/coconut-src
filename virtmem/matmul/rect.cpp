@@ -1,11 +1,10 @@
 #include <iostream>
 #include <cassert>
-#include <cstdint>
 #include <vector>
 
 class Matrix {
  public:
-  explicit Matrix(std::vector<std::vector<int32_t>> cells)
+  explicit Matrix(std::vector<std::vector<int>> cells)
       : rows_(std::move(cells)) {
   }
 
@@ -17,7 +16,7 @@ class Matrix {
     return rows_[0].size();
   }
 
-  const std::vector<int32_t>& operator[](size_t index) const {
+  const std::vector<int>& operator[](size_t index) const {
     return rows_[index];
   }
 
@@ -28,15 +27,17 @@ class Matrix {
     size_t m = lhs.Width();
     size_t k = rhs.Height();
 
-    std::vector<std::vector<int32_t>> rows;
+    std::vector<std::vector<int>> rows;
     rows.reserve(n);
     for (size_t i = 0; i < n; ++i) {
-      std::vector<int32_t> row;
+      std::vector<int> row;
       row.reserve(k);
       for (size_t j = 0; j < k; ++j) {
-        int32_t cell = 0;
+        int cell = 0;
         for (size_t s = 0; s < m; ++s) {
-          cell += lhs[i][s] * rhs[s][j];
+          int l = lhs[i][s];
+          int r = rhs[s][j];
+          cell += l * r;
         }
         row.push_back(cell);
       }
@@ -47,12 +48,12 @@ class Matrix {
   }
 
  private:
-  std::vector<std::vector<int32_t>> rows_;
+  std::vector<std::vector<int>> rows_;
 };
 
 int main() {
   constexpr size_t kSize = 600;
-  std::vector<std::vector<int32_t>> rows(kSize, std::vector<int32_t>(kSize, 0));
+  std::vector<std::vector<int>> rows(kSize, std::vector<int>(kSize, 0));
   Matrix lhs{rows};
   Matrix rhs{rows};
 
