@@ -7,27 +7,23 @@
 #include <ucontext.h>
 #include <unistd.h>
 
-asm("peek_byte:           \n"
-    "    mov  (%rdi), %cl \n"
-    "    mov  %cl, (%rsi) \n"
-    "    movq $1, %rax    \n"
-    "    retq             \n"
-    "recover:             \n"
-    "    movq $0, %rax    \n"
-    "    retq             \n");
+bool peek_byte(uintptr_t addr, uint8_t* out_byte) {
+  *out_byte = *(uint8_t*)addr;
+  return true;
+}
 
-bool peek_byte(uintptr_t addr, uint8_t* out_byte);
-void recover();
+bool recover() {
+  return false;
+}
 
 void handle_segv(int signum, siginfo_t* info, void* ctx) {
   (void)signum;
   (void)info;
-  (void)ctx;
-  ucontext_t* uc = ctx;
-  uc->uc_mcontext.gregs[REG_RIP] = (uintptr_t)&recover;
+  ucontext_t* uctx = ctx;
+  uctx->uc_mcontext.gregs[REG_RIP] = (uintptr_t)&recover;
 }
 
-volatile int x = 61;
+int x = 61;
 
 int main() {
   struct sigaction act = {.sa_flags = SA_SIGINFO, .sa_sigaction = &handle_segv};
